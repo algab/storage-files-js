@@ -12,8 +12,11 @@
 
 ### Case:
 const storage = require("storage-files-js")
+
 storage.insert(req,"http://localhost:3001","teste","1234")
+
 .then(data => {})
+
 .catch(err => {})
 
 ## 2 - INFO
@@ -28,8 +31,11 @@ storage.insert(req,"http://localhost:3001","teste","1234")
 
 ### Case:
 const storage = require("storage-files-js")
+
 storage.info("http://localhost:3001","teste","image.png","1234")
+
 .then(data => {})
+
 .catch(err => {})
 
 ## 3 - DELETE
@@ -44,6 +50,9 @@ storage.info("http://localhost:3001","teste","image.png","1234")
 
 ### Case:
 const storage = require("storage-files-js")
+
 storage.delete("http://localhost:3001","teste","image.png","1234")
+
 .then(data => {})
+
 .catch(err => {})
