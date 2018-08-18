@@ -1,0 +1,23 @@
+{
+  "name": "storage-files-js",
+  "version": "1.0.0",
+  "description": "Módulo Storage Files JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/algab/storage-files-js.git"
+  },
+  "author": "Álvaro Oliveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/algab/storage-files-js/issues"
+  },
+  "homepage": "https://github.com/algab/storage-files-js#readme",
+  "dependencies": {
+    "formidable": "^1.2.1",
+    "request": "^2.88.0"
+  }
+}
