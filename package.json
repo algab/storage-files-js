@@ -1,6 +1,6 @@
 {
   "name": "storage-files-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Package Storage Files JS",
   "keywords": ["Storage","Files"],
   "main": "index.js",
