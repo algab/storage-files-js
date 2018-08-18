@@ -13,6 +13,9 @@ module.exports = (host,nameFolder,nameObject,token,nameSubfolder) => {
                         let result = JSON.parse(resp.body)
                         resolve(result) 
                     }
+                    else if (resp.statusCode == 404) {
+                        reject({'Message':'Object not found','num':404})
+                    }
                     else {
                         reject({'Message':'Server Error','num':500})
                     }
@@ -31,6 +34,9 @@ module.exports = (host,nameFolder,nameObject,token,nameSubfolder) => {
                     if (resp.statusCode == 200) {
                         let result = JSON.parse(resp.body)
                         resolve(result)
+                    }
+                    else if (resp.statusCode == 404) {
+                        reject({'Message':'Object not found','num':404})
                     }
                     else {
                         reject({'Message':'Server Error','num':500})

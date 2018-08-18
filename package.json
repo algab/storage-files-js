@@ -1,7 +1,8 @@
 {
   "name": "storage-files-js",
-  "version": "1.0.0",
-  "description": "Módulo Storage Files JS",
+  "version": "1.0.1",
+  "description": "Package Storage Files JS",
+  "keywords": ["Storage","Files"],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
