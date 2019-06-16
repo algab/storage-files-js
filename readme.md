@@ -1,58 +1,67 @@
 # Package Storage Files JS
 
-## 1 - INSERT
+Package JavaScript for uploading, reading and deleting [Storage Files](https://github.com/algab/storage-files) applications objects.
 
-###  Attributes:
+## Step 1
 
-1 - Request (Required)
-2 - Host (Required)
-3 - nameFolder (Required)
-4 - token (Required)
-5 - nameSubfolder
+Install the package.
 
-### Case:
-const storage = require("storage-files-js")
+```
+npm install storage-files-js
+```
 
-storage.insert(req,"http://localhost:3001","teste","1234")
+## Step 2
 
+Use the package.
+
+#### Create instance
+
+#####  Attributes:
+
+1 - host (required)
+2 - nameBucket (required)
+3 - token (required)
+
+```
+const storageFiles = require('storage-files-js');
+const storage = storageFiles('http://localhost:3001/v1','teste','1234');
+```
+
+#### INSERT
+
+#####  Attributes:
+
+1 - request (required)
+2 - nameFolder
+
+```
+storage.insert(req)
 .then(data => {})
+.catch(err => {});
+```
 
-.catch(err => {})
+#### INFO
 
-## 2 - INFO
+#####  Attributes:
 
-###  Attributes:
+1 - nameObject (required)
+2 - nameFolder
 
-1 - Host (Required)
-2 - nameFolder (Required)
-3 - nameObject (Required)
-4 - token (Required)
-5 - nameSubfolder
-
-### Case:
-const storage = require("storage-files-js")
-
-storage.info("http://localhost:3001","teste","image.png","1234")
-
+```
+storage.info('teste.jpg')
 .then(data => {})
+.catch(err => {});
+```
 
-.catch(err => {})
+#### REMOVE
 
-## 3 - DELETE
+#####  Attributes:
 
-###  Attributes:
+1 - nameObject (required)
+2 - nameFolder
 
-1 - Host (Required)
-2 - nameFolder (Required)
-3 - nameObject (Required)
-4 - token (Required)
-5 - nameSubfolder
-
-### Case:
-const storage = require("storage-files-js")
-
-storage.delete("http://localhost:3001","teste","image.png","1234")
-
+```
+storage.remove('teste.jpg')
 .then(data => {})
-
-.catch(err => {})
+.catch(err => {});
+```
