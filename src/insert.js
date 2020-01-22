@@ -24,8 +24,7 @@ module.exports = (host, nameBucket, token, req, nameFolder) => {
                 request.post({ url: `${host}/objects/upload?bucket=${nameBucket}&folder=${nameFolder}`, formData }, (err, resp) => {
                     if (err) {
                         reject(new ErrorStorage('Server Error', 500));
-                    }
-                    if (resp.statusCode === 200) {
+                    } else if (resp.statusCode === 200) {
                         const result = JSON.parse(resp.body);
                         resolve(result);
                     } else if (resp.statusCode === 401) {
@@ -53,8 +52,7 @@ module.exports = (host, nameBucket, token, req, nameFolder) => {
             request.post({ url: `${host}/objects/upload?bucket=${nameBucket}`, formData }, (err, resp) => {
                 if (err) {
                     reject(new ErrorStorage('Server Error', 500));
-                }
-                if (resp.statusCode === 200) {
+                } else if (resp.statusCode === 200) {
                     const result = JSON.parse(resp.body);
                     resolve(result);
                 } else if (resp.statusCode === 401) {

@@ -8,8 +8,7 @@ module.exports = (host, nameBucket, token, nameObject, nameFolder) => {
             request.delete(`${host}/objects/${nameObject}?bucket=${nameBucket}&folder=${nameFolder}`, (err, resp) => {
                 if (err) {
                     reject(new ErrorStorage('Server Error', 500));
-                }
-                if (resp.statusCode === 200) {
+                } else if (resp.statusCode === 200) {
                     const result = JSON.parse(resp.body);
                     resolve(result);
                 } else if (resp.statusCode === 404) {
@@ -26,8 +25,7 @@ module.exports = (host, nameBucket, token, nameObject, nameFolder) => {
         request.delete(`${host}/objects/${nameObject}?bucket=${nameBucket}`, (err, resp) => {
             if (err) {
                 reject(new ErrorStorage('Server Error', 500));
-            }
-            if (resp.statusCode === 200) {
+            } else if (resp.statusCode === 200) {
                 const result = JSON.parse(resp.body);
                 resolve(result);
             } else if (resp.statusCode === 404) {
